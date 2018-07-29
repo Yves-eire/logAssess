@@ -9,7 +9,7 @@ Third party library: apach-common, jackson, junit, hsqldb
 build tool: gradle
 IDE: IntelliJ 14 Community 
 
-#Features:
+# Features:
 
  - Take the input file path as input argument
 Only one argv accept, which is a string describe the log file path 
@@ -24,7 +24,7 @@ HSQLDB implement with in-process model
 "alert" true is applicable
 The table doesn't contains any primary key and defined as Id,State,Type,Host, TimeStamp, Alert
 
-Additional points will be granted for:
+# Additional points will be granted for:
  - Proper use of info and debug logging
 Logger 
 
