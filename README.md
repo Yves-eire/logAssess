@@ -6,8 +6,11 @@ flag the longest event (finished - started) log entry
 # Fulfil on Requirements:
 
 Java 8 lambada
+
 Third party library: apach-common, jackson, junit, hsqldb
+
 build tool: gradle
+
 IDE: IntelliJ 14 Community 
 
 # Features:
@@ -27,7 +30,7 @@ HSQLDB implement with in-process model
  - The application should a new table if necessary and enter the following values: Event id, Event duration, Type and Host if applicable
 "alert" true is applicable:
 
-The table doesn't contains any primary key and defined as Id,State,Type,Host, TimeStamp, Alert
+No primary key set in the table ENTRIES that defined as Id,State,Type,Host, TimeStamp, Alert
 
 # Additional points will be granted for:
  - Proper use of info and debug logging:
