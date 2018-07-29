@@ -4,6 +4,7 @@ flag the longest event (finished - started) log entry
 <CREDIT SUISSE Coding Assignment>
 
 # Fulfil on Requirements:
+
 Java 8 lambada
 Third party library: apach-common, jackson, junit, hsqldb
 build tool: gradle
@@ -12,6 +13,7 @@ IDE: IntelliJ 14 Community
 # Features:
 
  - Take the input file path as input argument:
+ 
 Only one argv accept, which is a string describe the log file path 
 
  - Flag any long events that take longer than 4ms with a column in the database called "alert":
