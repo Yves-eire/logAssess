@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="HsqldbTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-07-29T19:08:05" hostname="Sharpsguard" time="0.09">
+<testsuite name="HsqldbTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-07-29T22:45:00" hostname="Sharpsguard" time="0.088">
   <properties/>
-  <testcase name="checkUpdatedColumnTest" classname="HsqldbTest" time="0.039"/>
-  <testcase name="checkIdExistsTest" classname="HsqldbTest" time="0.029"/>
-  <testcase name="getTotalRecordsTest" classname="HsqldbTest" time="0.02"/>
+  <testcase name="checkUpdatedColumnTest" classname="HsqldbTest" time="0.04"/>
+  <testcase name="checkIdExistsTest" classname="HsqldbTest" time="0.027"/>
+  <testcase name="getTotalRecordsTest" classname="HsqldbTest" time="0.019"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -9,16 +9,14 @@ public class JsonNodeMapper {
     private final Logger logger = Logger.getLogger(this.getClass().getName());
     JsonNode rootNode;
     ObjectMapper objectMapper;
-    Entry entry = new Entry();
 
-    public JsonNode JsonNodeMapperInit(String line){
-        objectMapper = new ObjectMapper();
+    public JsonNodeMapper(String line) {
+        this.objectMapper = new ObjectMapper();
         try {
-            rootNode = objectMapper.readTree(line);
+            this.rootNode = objectMapper.readTree(line);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return rootNode;
     }
 
     public JsonNode readJsonWithJsonNode() throws IOException {
@@ -27,50 +25,42 @@ public class JsonNodeMapper {
         return rootNode;
     }
 
-    public String readIdNode()
-    {
+    public String readIdNode() throws IllegalArgumentException {
         JsonNode idNode=rootNode.path("id");
-        entry.setId(idNode.asText());
+
+        if(idNode.asText()==null || idNode.asText().isEmpty()){
+                throw new IllegalArgumentException("Entry ID can not be null.");
+        }
+
         return idNode.asText();
     }
 
     public String readStateNode()
     {
         JsonNode stateNode=rootNode.path("state");
-        String st=stateNode.asText();
-        entry.setState(st);
-        return st;
+        return stateNode.asText();
     }
 
     public String readTypeNode()
     {
         JsonNode typeNode=rootNode.path("type");
-        String type=typeNode.asText();
-        entry.setType(type);
-        return type;
+        return typeNode.asText();
     }
 
     public String readHostNode()
     {
         JsonNode hostNode=rootNode.path("host");
-        String host=hostNode.asText();
-        entry.setHost(host);
-        return host;
+        return hostNode.asText();
     }
 
     public String readTStamp(){
         JsonNode tsNode = rootNode.path("timestamp");
-        String tStamp = tsNode.asText();
-        entry.setTimestamp(tStamp);
-        return tStamp;
+        return tsNode.asText();
+
     }
 
-    public Entry setEntry(){
-        entry.setHost(readHostNode());
-        entry.setId(readIdNode());
-        entry.setState(readStateNode());
-        entry.setType(readTypeNode());
-        entry.setTimestamp(readTStamp());
-        return entry;
+    public Entry getEntry() throws Exception{
+        return new Entry(readIdNode(),readStateNode(),readTypeNode(),readHostNode(),readTStamp());
     }
+
 }

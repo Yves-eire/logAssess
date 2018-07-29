@@ -1,4 +1,4 @@
-import java.io.IOException;
+
 import java.sql.SQLException;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -12,9 +12,9 @@ public class Assignment {
     private static final String ALARM = "ALARM";
     private static Long STARTDATE = 4688534123L;
 
-    public static void main (String[] argv) throws SQLException, IOException {
+    public static void main (String[] argv) throws Exception {
         if (argv.length != 1 || argv[0].isEmpty()){
-            System.err.println("one argument required");
+            System.err.println("only one argument required");
             System.exit(1);
         }
 
@@ -25,9 +25,8 @@ public class Assignment {
         List<Entry> entries = new ArrayList<>();
 
         for (String line : lineList){
-            JsonNodeMapper jsonNodeMapper = new JsonNodeMapper();
-            jsonNodeMapper.JsonNodeMapperInit(line);
-            entries.add(jsonNodeMapper.setEntry());
+            JsonNodeMapper jsonNodeMapper = new JsonNodeMapper(line);
+            entries.add(jsonNodeMapper.getEntry());
         }
 
         ArrayList<String> uniqId = new ArrayList<>();

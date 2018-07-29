@@ -8,16 +8,22 @@ public class Entry {
     private String host;
     private String timestamp;
 
-    public String getId(){
-        return id;
+    public Entry(String id, String state, String type, String host, String timestamp) throws Exception {
+        this.id = id;
+        this.state = state;
+        this.type = type;
+        this.host = host;
+        this.timestamp = timestamp;
     }
+
+    public String getId(){ return this.id;}
 
     public void setId(String id){
         this.id = id;
     }
 
     public String getState(){
-        return state;
+        return this.state;
     }
 
     public void setState(String state){
@@ -25,7 +31,7 @@ public class Entry {
     }
 
     public String getType(){
-        return type;
+        return this.type;
     }
 
     public void setType(String type){
@@ -33,7 +39,7 @@ public class Entry {
     }
 
     public String getHost(){
-        return host;
+        return this.host;
     }
 
     public void setHost(String host){
@@ -41,7 +47,7 @@ public class Entry {
     }
 
     public String getTimestamp(){
-        return timestamp;
+        return this.timestamp;
     }
 
     public void setTimestamp(String timestamp){

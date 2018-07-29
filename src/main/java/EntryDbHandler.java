@@ -25,7 +25,6 @@ public class EntryDbHandler {
     void createDb() throws SQLException {
         init();
         try(Connection connection = setConnection(); Statement statement = connection.createStatement();){
-//           dropDb();
             statement.execute("CREATE TABLE ENTRIES(id VARCHAR(20) NOT NULL,state VARCHAR(10) NOT NULL,type VARCHAR(20), host VARCHAR(10), timestamp VARCHAR(50) NOT NULL, alert BIT DEFAULT 0)");
             connection.commit();
         }
